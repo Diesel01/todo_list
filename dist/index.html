@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    
+    <script src = "main.js" defer></script>
+
+    <title>Pending</title>
+</head>
+<body>
+    <div class = 'topDiv'>
+        <div id = "titleDiv"> Pending </div>
+        <div id = "todayDiv"></div>    
+    </div>
+
+    <div class = "basic-grid">
+
+        <div class = "projectsDiv"> 
+            
+            <div class="addProjDiv">
+                <div id = projHeader>Projects</div>
+                <button id = "addProjBtn"> <img src="./imgs/add.png" width="50px" height="50px"> </button>
+            </div>
+        
+            <div>
+                <div id = "priorityProjs3" class = "priorityProj" ></div>
+                <div id = "priorityProjs2" class = "priorityProj" ></div>
+                <div id = "priorityProjs1" class = "priorityProj" ></div>
+            </div>
+        
+        </div>
+
+        <div id = "dueWeek" class = "dueWeekDiv">
+            <div> <p id = "dueTitle">Tasks due in the next seven days:</p> </div>
+            <ul id = "dueTasksList">
+            </ul>
+        </div>
+    </div>
+        
+    <!-- PROJECT DIVS -->
+    <div id = 'createProjectDiv' class = "modal modal-content" hidden>
+        <div class = "modal-header"> 
+            <button class = 'closeModal'>X</button>
+        </div>
+
+        <div class = "modal-body">
+            <label for = "projectName">Project's name:</label>
+            <input type="text" id = "projectName" name = "projectName"> 
+
+            <label for = 'projectColor'>Project's color</label>
+            <input type="color" id = "projectColor" name="projectColor">
+
+            <label for = "projectPriority">Project's priority: </label>
+            <input type="range" name="projectPriority" id="projectPriority" min="1" max="3" step = "1">
+            
+            <button id = "submitProjBtn">Click here to create your project</button>
+        </div>
+    </div>
+
+    <div id = 'editProjectDiv' class = "modal modal-content" hidden>
+        <div class = "modal-body">
+            <label for = "editProjectName">Project's name:</label>
+            <input type="text" id = "editProjectName" name = "editProjectName"> 
+
+            <label for = 'editProjectColor'>Project's color</label>
+            <input type="color" id = "editProjectColor" name="editProjectColor">
+
+            <label for = "editProjectPriority">Project's priority: </label>
+            <input type="range" name="editProjectPriority" id="editProjectPriority" min="1" max="3" step = "1">
+
+            <button id = "editProjBtn">Click here to edit your project</button>
+        </div>
+    </div>
+
+    <!-- TASK DIVS -->
+    <div id ="createTaskDiv"  class = "modal modal-content" hidden>
+        <div class="modal-body">
+             <!--form-->
+                <label for = "taskName">Task's name:</label>
+                <input type="text" id = "taskName" name = "taskName"> 
+                
+                <label for = 'taskColor'>Task's color:</label>
+                <input type="color" id = "taskColor" name="tasktColor">
+                
+                <label for = "taskChecklist">Task's checklist:</label>
+                <input id = "taskChecklist" type = "text" name = "taskChecklist">
+                
+                <label for = "taskImportance">Task's priority:</label>
+                <input type="range" name="taskImportance" id="taskImportance" min="1" max="5" step = "1">
+                
+                <label for = "taskDueDate">Task's due date:</label>
+                <input type = "date" id = "taskDueDate" name = "taskDueDate"> 
+                
+            
+            <button id = "submitTaskBtn">Click here to create your task</button>
+        </div>
+    </div>
+
+    <div id ="editTaskDiv" class = "modal modal-content" hidden>
+        <div class="modal-body">
+            <label for = "editTaskName">Task's name:</label>
+            <input type="text" id = "editTaskName" name = "editTaskName"> 
+
+            <label for = 'editTaskColor'>Task's color:</label>
+            <input type="color" id = "editTaskColor" name="editTasktColor">
+
+            <label for = "editTaskChecklist">Task's checklist:</label>
+            <input id = "editTaskChecklist" type = "text" name = "editTaskChecklist">
+
+            <label for = "editTaskImportance">Task's priority:</label>
+            <input type="range" name="editTaskImportance" id="editTaskImportance" min="1" max="5" step = "1">
+
+            <label for = "editTaskDueDate">Task's due date:</label>
+            <input type = "date" id = "editTaskDueDate" name = "editTaskDueDate"> 
+
+            <button id = "editTaskBtn">Click here to edit your task</button>
+        </div>
+    </div> 
+
+    <footer>
+        <a href="https://icons8.com/icons/small" target="blanck">Icons by Icons8</a>
+    </footer>
+</body>
+</html>

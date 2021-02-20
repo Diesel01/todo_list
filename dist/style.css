@@ -110,6 +110,10 @@
         .dueWeekDiv { width: 100%; }
     }
 
+.dueTask{ 
+    font-family: "Montserrat";
+}
+
 #dueTitle{ 
     width: 90%;
     height: 50px;

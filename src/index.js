@@ -180,7 +180,8 @@ const checkDueWeek = (taskName, taskDueDate) => {
     if (0 <= differenceInDays(taskDueDate, today) && differenceInDays(taskDueDate, today) <= 7){ 
         let li = document.createElement("li"); 
             li.innerHTML = taskName + " - " + format(taskDueDate, "MMM, dd, yyyy (cccc)", 1); 
-            li.id = `${taskName}-${taskDueDate}`
+            li.id = `${taskName}-${taskDueDate}`; 
+            li.className = "dueTask";
         document.getElementById("dueTasksList").appendChild(li)
     }
 }

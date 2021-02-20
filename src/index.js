@@ -116,6 +116,7 @@ const createProjectDiv = (project) => {
         h3.id = "h3-"+project.name; 
         h3.innerHTML = project.name;
         h3.style.color = project.color;
+        h3.className = "name"; 
         projectHeaderDiv.appendChild(h3);
 
     let btnDivs = document.createElement("div"); 

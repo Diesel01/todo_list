@@ -91,8 +91,6 @@
     }
 
 #addProjBtn{ 
-    width: 66px;
-    height: 50px;
     display: flex;
     align-items: center;
     background: #FFFFFF;
@@ -149,6 +147,10 @@
 }
     @media only screen and (max-width: 1555px){
         .projectDiv{ grid-template-columns: auto auto auto; }
+    }
+
+    @media only screen and (max-width: 468px){ 
+        .name{ font-size: 90%;}
     }
 
 .btnDiv{ 

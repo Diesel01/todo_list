@@ -9,6 +9,18 @@ const project1 = projectFactory("High priority", '#0047FF', [], 3);
 const project2 = projectFactory("Moderate priority", '#0047FF', [], 2);
 const project3 = projectFactory("Low priority", '#0047FF', [], 1); 
 
+const hideShow = (id) =>{ 
+    let element = document.getElementById(`${id}`); 
+    let value = element.hidden;
+    element.hidden = !value; 
+}
+
+const closeModalBtn = document.getElementsByClassName("closeModal"); 
+    closeModalBtn[0].addEventListener("click", function(){ hideShow("createProjectDiv")})
+    closeModalBtn[1].addEventListener("click", function(){ hideShow("editProjectDiv")})
+    closeModalBtn[2].addEventListener("click", function(){ hideShow("createTaskDiv")})
+    closeModalBtn[3].addEventListener("click", function(){ hideShow("editTaskDiv")})
+
 //Might want to separate DOM logic in another module 
 const editProject = (project) =>{ 
     let newProjectName = document.getElementById("editProjectName").value; 
@@ -97,7 +109,7 @@ const createProjectDiv = (project) => {
     let expandBtn = document.createElement("button"); 
         expandBtn.className = 'expandBtn'; 
         expandBtn.innerHTML = expandIcon; 
-        expandBtn.addEventListener("click", function(){ let taskDiv = document.getElementById("tasks-"+project.name); taskDiv.hidden = false; }) 
+        expandBtn.addEventListener("click", function(){ hideShow("tasks-"+project.name) }) 
         projectHeaderDiv.appendChild(expandBtn)
 
     let h3 = document.createElement("h3"); 
@@ -291,7 +303,7 @@ const addTaskToProjectDiv = (task) => {
         
     let checklistBtn = document.createElement("button"); 
         checklistBtn.innerHTML = checkIcon; 
-        checklistBtn.addEventListener("click", function(){ document.getElementById("checklistDiv-"+task.name).hidden = false })
+        checklistBtn.addEventListener("click", function(){ hideShow("checklistDiv-"+task.name) })
 
     let editTaskBtn = document.createElement("button"); 
         editTaskBtn.innerHTML = editIcon; 

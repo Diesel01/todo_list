@@ -34,3 +34,5 @@ const project3 = projectFactory("Low priority", '#0047FF', [], 1);
 createProjectDiv(project1)
 createProjectDiv(project2)
 createProjectDiv(project3)
+
+console.log('hi')

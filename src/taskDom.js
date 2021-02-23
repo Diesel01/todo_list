@@ -1,8 +1,11 @@
+import { projectFactory, taskFactory, deleteObj } from './factories.js';
 import { thisProjectObj } from "./projectDom";
 import { editIcon, deleteIcon, checkIcon, expandIcon } from "./iconsSVG.js";
 import { format, parseISO, differenceInDays } from 'date-fns'; 
+import { hideShow } from './projectDom.js';
 
 const checkDueWeek = (taskName, taskDueDate) => { 
+    let today = new Date()
     if (0 <= differenceInDays(taskDueDate, today) && differenceInDays(taskDueDate, today) <= 7){ 
         let li = document.createElement("li"); 
             li.innerHTML = taskName + " - " + format(taskDueDate, "MMM, dd, yyyy (cccc)", 1); 
@@ -205,7 +208,7 @@ const createTaskFromForm = () => {
     newTask.addChecklistItem(thisTaskChecklist)
 
     console.log(`${thisProjectObj.name}'s tasks: `)
-    console.log(thisProjectObj.tasks);
+    console.log(thisProjectObj.tasks)
 
     addTaskToProjectDiv(newTask); 
 

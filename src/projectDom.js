@@ -1,4 +1,11 @@
+import { projectFactory, taskFactory, deleteObj } from './factories.js';
 import { editIcon, addIcon, deleteIcon, expandIcon } from "./iconsSVG.js";
+
+const hideShow = (id) =>{ 
+    let element = document.getElementById(`${id}`); 
+    let value = element.hidden;
+    element.hidden = !value; 
+}
 
 const editProject = (project) =>{ 
     let newProjectName = document.getElementById("editProjectName").value; 
@@ -142,4 +149,4 @@ const createProjectFromForm = () => {
     createProjectDiv(thisProject); 
 }
 
-export { editProject, editProjectDiv, setUpEditProjectDiv, createProjTaskDiv, thisProjectObj, createProjectDiv, createProjectFromForm }
+export { editProject, editProjectDiv, setUpEditProjectDiv, createProjTaskDiv, thisProjectObj, createProjectDiv, createProjectFromForm, hideShow }

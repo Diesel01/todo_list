@@ -1,4 +1,6 @@
 import { thisProjectObj } from "./projectDom";
+import { editIcon, deleteIcon, checkIcon, expandIcon } from "./iconsSVG.js";
+import { format, parseISO, differenceInDays } from 'date-fns'; 
 
 const checkDueWeek = (taskName, taskDueDate) => { 
     if (0 <= differenceInDays(taskDueDate, today) && differenceInDays(taskDueDate, today) <= 7){ 

@@ -1,3 +1,5 @@
+import { editIcon, addIcon, deleteIcon, expandIcon } from "./iconsSVG.js";
+
 const editProject = (project) =>{ 
     let newProjectName = document.getElementById("editProjectName").value; 
     let newProjectColor = document.getElementById("editProjectColor").value; 
